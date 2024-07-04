@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll"
+    android:padding="10dp"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/til_name"
+        android:hint="Name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:prefixText="Mr."
+        app:prefixTextColor="@color/black"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_calender">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_age"
+        android:hint="DOB"
+        android:inputType="text"
+        android:maxLength="10"
+        android:layout_below="@id/til_name"
+        />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/iv_dob"
+        android:src="@drawable/ic_calender"
+        android:layout_toEndOf="@id/et_age"
+        android:layout_below="@id/til_name"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_mobile"
+        android:hint="Mobile number"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:layout_below="@id/btn_show"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_gender"
+        android:layout_below="@id/et_age">
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_male"
+            android:text="@string/rb_txt_male"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_female"
+            android:text="@string/rb_text_female"/>
+    </RadioGroup>
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_3"
+        android:text="@string/btn_txt"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rg_gender"
+        />
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_display"
+        android:layout_below="@id/btn_custom_dialog"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+
+   <com.google.android.material.button.MaterialButton
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/btn_show"
+       android:text="Show"
+       android:layout_below="@id/btn_3"
+       android:layout_centerHorizontal="true"
+       />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_dial"
+        android:text="Dial"
+        android:layout_below="@id/et_mobile"
+        android:layout_centerHorizontal="true"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_call"
+        android:text="CALL"
+        android:layout_below="@id/et_mobile"
+        android:layout_centerHorizontal="true"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_custom_dialog"
+        android:text="Custom Dialog"
+        android:layout_below="@id/btn_call"
+        android:layout_centerHorizontal="true"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_custom_dialog1"
+        android:text="Custom Dialogewsrrythj"
+        android:layout_below="@id/btn_custom_dialog"
+        android:layout_centerHorizontal="true"
+        />
+
+
+</RelativeLayout>
+</ScrollView>

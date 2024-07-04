@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AP_Training_01</string>
+    <string name="btn_txt">Click</string>
+    <string name="et_hint">Enter Name</string>
+    <string name="rb_txt_male">Male</string>
+    <string name="rb_text_female">Female</string>
+    <string name="et_enter_age_hint">Enter Age</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+
+</resources>
