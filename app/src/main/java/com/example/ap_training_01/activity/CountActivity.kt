@@ -20,7 +20,7 @@ class CountActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityCountBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        myViewModel = ViewModelProvider(this)[CountActivityViewModel::class.java]
+        myViewModel = ViewModelProvider(this, )[CountActivityViewModel::class.java]
 
         binding.tvCount.text = myViewModel.count.toString()
 
