@@ -38,25 +38,25 @@ class DbAdapter(private val context: Context) {
     }
 
 
-    fun getData(): ArrayList<User>{
-        val userList = ArrayList<User>()
-        val arra = arrayOf(COL_SNO, COL_FNAME, COL_LNAME, COL_EMAIL)
-        val cursor = db.query(TABLE_NAME, arra, null, null, null, null, null)
-        if (cursor.count > 0){
-            cursor.moveToFirst()
-
-            do{
-                val srNo = cursor.getInt(0)
-                val fName = cursor.getString(1)
-                val lName = cursor.getString(2)
-                val email = cursor.getString(3)
-                userList.add(User(srNo, fName, lName, email))
-
-            }while (cursor.moveToNext())
-        }
-        return userList
-
-    }
+//    fun getData(): ArrayList<User>{
+//        val userList = ArrayList<User>()
+//        val arra = arrayOf(COL_SNO, COL_FNAME, COL_LNAME, COL_EMAIL)
+//        val cursor = db.query(TABLE_NAME, arra, null, null, null, null, null)
+//        if (cursor.count > 0){
+//            cursor.moveToFirst()
+//
+//            do{
+//                val srNo = cursor.getInt(0)
+//                val fName = cursor.getString(1)
+//                val lName = cursor.getString(2)
+//                val email = cursor.getString(3)
+//                userList.add(User(srNo, fName, lName, email))
+//
+//            }while (cursor.moveToNext())
+//        }
+//        return userList
+//
+//    }
 
 
     fun updateUser(id: Int, fName: String, lName: String, email: String){

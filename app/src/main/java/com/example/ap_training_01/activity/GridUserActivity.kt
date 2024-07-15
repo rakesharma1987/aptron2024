@@ -19,12 +19,12 @@ class GridUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGridUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        myDbAdapter = DbAdapter(this)
-
-        val userList = myDbAdapter.getData()
-        val userListAdapter = GridRecyclerviewAdapter(userList)
-        binding.rvUser.adapter = userListAdapter
-        userListAdapter.notifyDataSetChanged()
+//        myDbAdapter = DbAdapter(this)
+//
+//        val userList = myDbAdapter.getData()
+//        val userListAdapter = GridRecyclerviewAdapter(userList)
+//        binding.rvUser.adapter = userListAdapter
+//        userListAdapter.notifyDataSetChanged()
 
     }
 }

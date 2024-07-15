@@ -16,18 +16,20 @@ class DbRepository(private val context: Context) {
     private val COL_FNAME = "fname"
     private val COL_LNAME = "lname"
     private val COL_EMAIL = "email"
+    private val COL_PROFILE = "profile"
 
-    val CREATETABLE = "CREATE TABLE $TABLE_NAME ($COL_SNO INTEGER PRIMARY KEY AUTOINCREMENT, $COL_FNAME TEXT, $COL_LNAME TEXT, $COL_EMAIL TEXT)"
+    val CREATETABLE = "CREATE TABLE $TABLE_NAME ($COL_SNO INTEGER PRIMARY KEY AUTOINCREMENT, $COL_FNAME TEXT, $COL_LNAME TEXT, $COL_EMAIL TEXT, $COL_PROFILE)"
     val dbHelper = MyDbHelper(context)
     val db = dbHelper.writableDatabase
 
 
 
-    fun saveData(fName: String, lName: String, email: String){
+    fun saveData(fName: String, lName: String, email: String, profile: String){
         val contentValue = ContentValues()
         contentValue.put(COL_FNAME, fName)
         contentValue.put(COL_LNAME, lName)
         contentValue.put(COL_EMAIL, email)
+        contentValue.put(COL_PROFILE, profile)
         val id = db.insert(TABLE_NAME, null, contentValue)
         if (id > 0){
             Toast.makeText(context, "Successfully saved.", Toast.LENGTH_SHORT).show()
@@ -39,7 +41,7 @@ class DbRepository(private val context: Context) {
 
     fun getData(): ArrayList<User>{
         val userList = ArrayList<User>()
-        val arra = arrayOf(COL_SNO, COL_FNAME, COL_LNAME, COL_EMAIL)
+        val arra = arrayOf(COL_SNO, COL_FNAME, COL_LNAME, COL_EMAIL, COL_PROFILE)
         val cursor = db.query(TABLE_NAME, arra, null, null, null, null, null)
         if (cursor.count > 0){
             cursor.moveToFirst()
@@ -49,7 +51,8 @@ class DbRepository(private val context: Context) {
                 val fName = cursor.getString(1)
                 val lName = cursor.getString(2)
                 val email = cursor.getString(3)
-                userList.add(User(srNo, fName, lName, email))
+                val profile = cursor.getString(4)
+                userList.add(User(srNo, fName, lName, email, profile))
 
             }while (cursor.moveToNext())
         }
